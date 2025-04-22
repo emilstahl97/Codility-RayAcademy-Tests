@@ -29,7 +29,7 @@ String S is made only of digits (0–9).
 
 def solution(S: str):
 
-    # 1: count frequency of digits in  
+    # 1: count frequency of digits in S 
 
     freq = {}
 
