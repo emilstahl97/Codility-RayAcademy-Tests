@@ -96,7 +96,7 @@ def solution(S: str):
     return ''.join(map(str, palindrome))
 
 
-s = "4382872"
+s = "1233"
   
 palindrome = solution(s)
 
