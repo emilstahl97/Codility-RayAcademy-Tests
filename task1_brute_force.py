@@ -61,8 +61,7 @@ def solution(S, L):
             if letter not in s_counter:
                 print(f'Letter {letter} not found in S')
                 # we cannot build this word, no need to check rest
-                copies_of_word = 0
-                max_copies = 0
+                copies = 0
                 break
         
             # check how many times each letter of the word occurs in S, floor it.
@@ -72,7 +71,8 @@ def solution(S, L):
 
         # set the word that has maximum copies
 
-        max_copies = max(copies, max_copies)
+        print('set max copis for word: ' + word)
+        max_copies = max(max_copies, copies)
 
     return max_copies
 
