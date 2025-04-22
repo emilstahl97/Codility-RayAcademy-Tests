@@ -39,37 +39,47 @@ Do you have any questions?
 from collections import Counter
 
 def solution(S, L):
-    # Count frequency of each letter in S
-    s_freq = Counter(S)
-    print(f's_freq: {s_freq}')
-    
-    max_copies = 0
-    
-    # Check each string in L
-    for name in L:
-        # Count frequency of each letter in the current name
-        name_freq = Counter(name)
-        print(f'Name: {name}, Name_freq: {name_freq}')
-        
-        # Calculate how many copies of the name can be made
-        copies = float('inf')  # Start with infinity, find min across letters
-        for char, count in name_freq.items():
-            if char not in s_freq:
-                copies = 0  # Cannot make any copies if a required letter is missing
-                break
-            # Number of copies is limited by the availability of each letter
-            copies = min(copies, s_freq[char] // count)
-        
-        # Update max_copies if this name can be made more times
-        max_copies = max(max_copies, copies)
-    
-    return max_copies
 
+    s_counter = Counter(S)
+
+    print(f's_counter: {s_counter}')
+
+    # check how many times each word in L can be built using letters from S
+
+    max_copies = 0
+
+    for word in L:
+        copies = float('inf') # just set big word to compare against
+        word_counter = Counter(word)
+        print(f'Name {word}:')
+        print(f'Frequency: {word_counter}')
+
+        # iterate L and check how many we can build using S 
+
+        for letter, count in word_counter.items():
+            print(f'Letter {letter} occurs {count} times in {word}')
+            if letter not in s_counter:
+                print(f'Letter {letter} not found in S')
+                # we cannot build this word, no need to check rest
+                copies_of_word = 0
+                max_copies = 0
+                break
+        
+            # check how many times each letter of the word occurs in S, floor it.
+            # number of copies we can make is limited by the letter with fewest copies
+            copies = min(copies, s_counter[letter] // count)
+            print(f'Copies of word: {copies}')
+
+        # set the word that has maximum copies
+
+        max_copies = max(copies, max_copies)
+
+    return max_copies
 
 
 # Example inputs from the problem statement
 example1_S = "BILLOBILLOLOBBI"
-example1_L = ["BILL", "BOB"]
+example1_L = ["BILL", "BOB", "test"]
 print(f'Example 1: S = {example1_S}, L = {example1_L}')
 print(f"Example 1: {solution(example1_S, example1_L)}")  # Expected output: 3
 
