@@ -6,7 +6,9 @@
 
 * middle är variabel för att hålla koll på vilken siffra som ska placeras i mitten av palindromet.
 
-* loopar från 9 till 0 för att hitta den största siffran som har en udda frekvens. Kollar om siffran finns i S och om frekvensen är udda. Dekrementerar frekvensen med 1 för att markera att den har använts.
+* loopar från 9 till 0 för att hitta den största siffran som har en udda frekvens. Siffran som ska placeras i mitten av palindromet måste ha udda frekvens eftersom för att använda så många siffror som möjligt i S.
+
+* Kollar om siffran finns i S och om frekvensen är udda. Dekrementerar frekvensen med 1 för att markera att den har använts.
 Eftersom vi itererar från 9 till 0 kan vi avbryta loopen vid första matchning. Detta skulle egentligen kunna göras mer effektivt genom att använda ett set av S och kolla om siffran finns i setet så att man inte behöver kolla siffror som inte finns i S.
 
 * nu skapar vi första halvan av palindromet, itererar från 9 till 0. Om listan half är tom och siffran är 0 skippar vi den, eftersom vi inte kan ha ett palindrom med 0 i början.
