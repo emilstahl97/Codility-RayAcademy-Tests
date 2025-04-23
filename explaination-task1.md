@@ -1,4 +1,4 @@
-Förklaring task1:
+#Förklaring task1:
 
 * Börjar med att räkna antalet förekomster av varje bokstav i katalogen, fuskar lite och använder collections.Counter men kan även iterera över strängen själv och skapa en dictionary som åstadkommer samma resultat.
 
