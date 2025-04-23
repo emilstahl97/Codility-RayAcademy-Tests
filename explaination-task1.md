@@ -21,7 +21,3 @@ Förklaring task1:
 * om antalet kopior för det nuvarande namnet är högre än max_copies sätts max_copies till det nya antalet kopior.
 
 * returnerar max_copies
-
-
-
--
